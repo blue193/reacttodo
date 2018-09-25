@@ -17,12 +17,10 @@ export const toggleTodo = id => ({
 
 export const moveAllA2B = () => ({
     type: MOVE_A2B_ALL
-    
 })
 
 export const moveAllB2A = () => ({
     type: MOVE_B2A_ALL
-    
 })
 
 export const moveSelectedA2B = () => ({

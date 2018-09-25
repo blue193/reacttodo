@@ -12,19 +12,17 @@ class Operate extends React.Component {
     render() {
         return (
             <div>
-                <button onClick={() => moveAllA2B()}> &#8608; </button>
-                <button onClick={() => moveAllB2A()}> &#8606; </button>
-                <button onClick={() => moveSelectedA2B()}> &#8592; </button>
-                <button onClick={() => moveSelectedB2A()}> &#8594; </button>
+                <div class="btn-group-vertical" role="group" aria-label="Basic example">
+                    <button type="button" class="btn btn-secondary" onClick={() => this.props.moveAllA2B()}> &#8608; </button>
+                    <button type="button" class="btn btn-secondary" onClick={() => this.props.moveAllB2A()}> &#8606; </button>
+                    <button type="button" class="btn btn-secondary" onClick={() => this.props.moveSelectedA2B()}> &#8592; </button>
+                    <button type="button" class="btn btn-secondary" onClick={() => this.props.moveSelectedB2A()}> &#8594; </button>
+                </div>
             </div>
         )
     }
 }
-Operate.propTypes = {
-}
-const mapStateToProps = (todos) => ({
-    todos
-})
+
 const mapDispatchToProps = (dispatch) => ({
     moveAllA2B: () => dispatch(moveAllA2B()),
     moveAllB2A: () => dispatch(moveAllB2A()),
@@ -33,6 +31,6 @@ const mapDispatchToProps = (dispatch) => ({
 })
 
 export default connect(
-    mapStateToProps,
+    null,
     mapDispatchToProps
 )(Operate)
