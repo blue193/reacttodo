@@ -15,6 +15,10 @@ export const toggleTodo = id => ({
     id
 })
 
+export const loadTodos = () => ({
+    type: LOAD_TODOS
+})
+
 export const moveAllA2B = () => ({
     type: MOVE_A2B_ALL
 })

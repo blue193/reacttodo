@@ -3,11 +3,16 @@ import logo from './logo.svg';
 import './App.css';
 import Root from './Root'
 import { Provider } from "react-redux"
-import { createStore } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
+import todoSaga  from './store/saga/saga'
+import createSagaMiddleware from 'redux-saga'
 import rootReducer from "./store/reducers"
 
-const store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
-console.log("init state", store.getState())
+const todoMiddleware = createSagaMiddleware()
+
+const store = createStore(rootReducer, applyMiddleware(todoMiddleware))//, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
+todoMiddleware.run(todoSaga)
+
 class App extends Component {
   render() {
     return (

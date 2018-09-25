@@ -3,12 +3,18 @@ import {
     MOVE_A2B_ALL,
     MOVE_B2A_ALL,
     MOVE_A2B_SELECTED,
-    MOVE_B2A_SELECTED
+    MOVE_B2A_SELECTED,
+    LOAD_TODOS_SUCCESS,
+    LOAD_TODOS_FAILURE
 }  from "../actions/index"
-import initialState from './../initialstate';
+// import initialState from './../initialstate';
 
-const todosReducer = (state = initialState.todos, action) => {
+const todosReducer = (state = [], action) => {
     switch(action.type) {
+        case LOAD_TODOS_SUCCESS:
+            return action.todos
+        case LOAD_TODOS_FAILURE:
+            return []
         case TOGGLE_TODO:
             return state.map(todo =>
                 (todo.id) === (action.id) ? {...todo, checked: !todo.checked} : todo

@@ -13,10 +13,10 @@ class Operate extends React.Component {
         return (
             <div>
                 <div class="btn-group-vertical" role="group" aria-label="Basic example">
-                    <button type="button" class="btn btn-secondary" onClick={() => this.props.moveAllA2B()}> &#8608; </button>
-                    <button type="button" class="btn btn-secondary" onClick={() => this.props.moveAllB2A()}> &#8606; </button>
-                    <button type="button" class="btn btn-secondary" onClick={() => this.props.moveSelectedA2B()}> &#8592; </button>
-                    <button type="button" class="btn btn-secondary" onClick={() => this.props.moveSelectedB2A()}> &#8594; </button>
+                    <button type="button" className="btn btn-secondary" onClick={() => this.props.moveAllA2B()}> &#8608; </button>
+                    <button type="button" className="btn btn-secondary" onClick={() => this.props.moveAllB2A()}> &#8606; </button>
+                    <button type="button" className="btn btn-secondary" onClick={() => this.props.moveSelectedA2B()}> &#8592; </button>
+                    <button type="button" className="btn btn-secondary" onClick={() => this.props.moveSelectedB2A()}> &#8594; </button>
                 </div>
             </div>
         )
